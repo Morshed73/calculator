@@ -7,47 +7,45 @@
 
     <!-- css link -->
     <link rel="stylesheet" href="style.css">
-    <title>Document</title>
+    <title>Calculator</title>
 </head>
 <body>
     <div class="container">
         <div class="calculator-body">
-            <form>
                 <div>
-                    <input type="text" class="display-area" name="display">
+                    <input type="text" id="display-input" class="display-area">
                 </div>
                 <div>
-                    <input type="button" value="AC" onclick="display.value = ' ' " class="all-clear">
-                    <input type="button" value="DE" onclick="display.value = display.value.slice(0, -1)">
-                    <input type="button" value="." onclick="display.value += '.' ">
-                    <input type="button" value="/" onclick="display.value += '/' ">
+                   <button id="Ac" class="all-clear" onclick="cleanButton()">AC</button>
+                   <button id="DE" class="last-clean" onclick="lastClean()">DE</button>
+                   <button id="." class="button" onclick="operateButton('.')">.</button>
+                   <button id="/" class="button" onclick="operateButton('/')">/</button>
                 </div>
                 <div>
-                    <input type="button" value="7" onclick="display.value += '7' ">
-                    <input type="button" value="8" onclick="display.value += '8' ">
-                    <input type="button" value="9" onclick="display.value += '9' ">
-                    <input type="button" value="*" onclick="display.value += '*' ">
+                    <button id="7" class="button" onclick="numButton('7')">7</button>
+                    <button id="8" class="button" onclick="numButton('8')">8</button>
+                    <button id="9" class="button" onclick="numButton('9')">9</button>
+                    <button id="*" class="button" onclick="operateButton('*')">*</button>
                 </div>
                 <div>
-                    <input type="button" value="4" onclick="display.value += '4' ">
-                    <input type="button" value="5" onclick="display.value += '5' ">
-                    <input type="button" value="6" onclick="display.value += '6' ">
-                    <input type="button" value="-" onclick="display.value += '-' ">
+                    <button id="4" class="button" onclick="numButton('4')">4</button>
+                    <button id="5" class="button" onclick="numButton('5')">5</button>
+                    <button id="6" class="button" onclick="numButton('6')">6</button>
+                    <button id="-" class="button" onclick="operateButton('-')">-</button>
                 </div>
                 <div>
-                    <input type="button" value="1" onclick="display.value += '1' ">
-                    <input type="button" value="2" onclick="display.value += '2' ">
-                    <input type="button" value="3" onclick="display.value += '3' ">
-                    <input type="button" value="+" onclick="display.value += '+' ">
+                    <button id="1" class="button" onclick="numButton('1')">1</button>
+                    <button id="2" class="button" onclick="numButton('2')">2</button>
+                    <button id="3" class="button" onclick="numButton('3')">3</button>
+                    <button id="+" class="button" onclick="operateButton('+')">+</button>
                 </div>
                 <div>
-                    <input type="button" value="00" onclick="display.value += '00' ">
-                    <input type="button" value="0" onclick="display.value += '0' ">
-                    <input type="button" value="=" onclick="display.value = eval(display.value)" id="equal-btn">
+                    <button id="00" class="button" onclick="numButton('00')">00</button>
+                    <button id="0" class="button" onclick="numButton('0')">0</button>
+                    <button id="result" class="equal" onclick="equalButton()">=</button>
                 </div>
-                <script src="index.js"></script>
-            </form>
         </div>
     </div>
+    <script src="index.js"></script>
 </body>
 </html>
